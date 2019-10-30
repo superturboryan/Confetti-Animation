@@ -26,7 +26,9 @@
     
     self.skView.allowsTransparency = YES;
     
-    [self playConfetti];
+    self.youWinView.layer.cornerRadius = 15.0;
+    
+    [self loadEmptyScene];
     
     [self hideYouWin];
 }
@@ -56,6 +58,12 @@
     } completion:^(BOOL finished) {
         return;
     }];
+}
+
+-(void)loadEmptyScene {
+    SKScene *emptyScene = [[SKScene alloc]init];
+    emptyScene.backgroundColor = UIColor.clearColor;
+    [self.skView presentScene:emptyScene];
 }
 
 -(void)playConfetti {
