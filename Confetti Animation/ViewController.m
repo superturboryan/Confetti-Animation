@@ -24,17 +24,23 @@
     
     self.skView.allowsTransparency = YES;
     
-    [self addConfettiView];
+    [self playConfetti];
 }
 
--(void)addConfettiView {
+-(void)playConfetti {
     
     SKScene *confettiScene = [[ConfettiScene alloc] initWithSize:CGSizeMake(self.view.frame.size.width, self.view.frame.size.height)];
     
 //     confettiScene.scaleMode
+
+    [(ConfettiScene*)confettiScene setupConfetti];
     
     [self.skView presentScene:confettiScene];
 }
 
+- (IBAction)pressConfettiButton:(id)sender {
+    
+    [self playConfetti];
+}
 
 @end

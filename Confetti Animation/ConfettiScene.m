@@ -19,15 +19,15 @@
 {
     [super didMoveToView:view];
     
-    [self setupConfetti];
-    
     self.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame];
     
     self.scene.backgroundColor = UIColor.clearColor;
+    
+    [self setupConfetti];
 }
 
--(void)setupConfetti {
-    
+-(void)setupConfetti
+{
     SKEmitterNode *emitter = [NSKeyedUnarchiver unarchiveObjectWithFile: [[NSBundle mainBundle] pathForResource:@"Confetti" ofType:@"sks"]];
     
     NSArray <SKColor *> *colorArray = @[ SKColor.whiteColor, SKColor.blueColor, SKColor.redColor, SKColor.yellowColor, SKColor.greenColor, SKColor.orangeColor];
@@ -52,6 +52,7 @@
     SKAction *wait = [SKAction waitForDuration:0.05];
     
     [self runAction: [SKAction repeatActionForever: [SKAction sequence:@[action,wait]]]];
+    
 }
 
 

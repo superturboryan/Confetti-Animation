@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ConfettiScene : SKScene
 
+-(void)setupConfetti;
+
 @end
 
 NS_ASSUME_NONNULL_END
