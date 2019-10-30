@@ -14,6 +14,8 @@
 		941136A223690C36003AE8E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 941136A123690C36003AE8E5 /* Assets.xcassets */; };
 		941136A523690C36003AE8E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 941136A323690C36003AE8E5 /* LaunchScreen.storyboard */; };
 		941136A823690C36003AE8E5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 941136A723690C36003AE8E5 /* main.m */; };
+		941136B023690D1C003AE8E5 /* Confetti.sks in Resources */ = {isa = PBXBuildFile; fileRef = 941136AF23690D1C003AE8E5 /* Confetti.sks */; };
+		94CD7D672369127000A56BFB /* ConfettiScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 94CD7D662369127000A56BFB /* ConfettiScene.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,9 @@
 		941136A423690C36003AE8E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		941136A623690C36003AE8E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		941136A723690C36003AE8E5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		941136AF23690D1C003AE8E5 /* Confetti.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Confetti.sks; sourceTree = "<group>"; };
+		94CD7D652369127000A56BFB /* ConfettiScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConfettiScene.h; sourceTree = "<group>"; };
+		94CD7D662369127000A56BFB /* ConfettiScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ConfettiScene.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,19 +66,38 @@
 		9411369423690C34003AE8E5 /* Confetti Animation */ = {
 			isa = PBXGroup;
 			children = (
-				9411369523690C34003AE8E5 /* AppDelegate.h */,
-				9411369623690C34003AE8E5 /* AppDelegate.m */,
-				9411369823690C34003AE8E5 /* SceneDelegate.h */,
-				9411369923690C34003AE8E5 /* SceneDelegate.m */,
+				94CD7D6923691AD700A56BFB /* AppDelegate */,
+				94CD7D6823691ACA00A56BFB /* SceneDelegate */,
+				9411369E23690C34003AE8E5 /* Main.storyboard */,
 				9411369B23690C34003AE8E5 /* ViewController.h */,
 				9411369C23690C34003AE8E5 /* ViewController.m */,
-				9411369E23690C34003AE8E5 /* Main.storyboard */,
-				941136A123690C36003AE8E5 /* Assets.xcassets */,
-				941136A323690C36003AE8E5 /* LaunchScreen.storyboard */,
+				94CD7D652369127000A56BFB /* ConfettiScene.h */,
+				94CD7D662369127000A56BFB /* ConfettiScene.m */,
+				941136AF23690D1C003AE8E5 /* Confetti.sks */,
 				941136A623690C36003AE8E5 /* Info.plist */,
 				941136A723690C36003AE8E5 /* main.m */,
+				941136A123690C36003AE8E5 /* Assets.xcassets */,
+				941136A323690C36003AE8E5 /* LaunchScreen.storyboard */,
 			);
 			path = "Confetti Animation";
+			sourceTree = "<group>";
+		};
+		94CD7D6823691ACA00A56BFB /* SceneDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				9411369823690C34003AE8E5 /* SceneDelegate.h */,
+				9411369923690C34003AE8E5 /* SceneDelegate.m */,
+			);
+			path = SceneDelegate;
+			sourceTree = "<group>";
+		};
+		94CD7D6923691AD700A56BFB /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				9411369523690C34003AE8E5 /* AppDelegate.h */,
+				9411369623690C34003AE8E5 /* AppDelegate.m */,
+			);
+			path = AppDelegate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,6 +160,7 @@
 				941136A523690C36003AE8E5 /* LaunchScreen.storyboard in Resources */,
 				941136A223690C36003AE8E5 /* Assets.xcassets in Resources */,
 				941136A023690C34003AE8E5 /* Main.storyboard in Resources */,
+				941136B023690D1C003AE8E5 /* Confetti.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,6 +173,7 @@
 			files = (
 				9411369D23690C34003AE8E5 /* ViewController.m in Sources */,
 				9411369723690C34003AE8E5 /* AppDelegate.m in Sources */,
+				94CD7D672369127000A56BFB /* ConfettiScene.m in Sources */,
 				941136A823690C36003AE8E5 /* main.m in Sources */,
 				9411369A23690C34003AE8E5 /* SceneDelegate.m in Sources */,
 			);
