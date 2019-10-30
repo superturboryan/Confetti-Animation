@@ -80,6 +80,7 @@ Win!</string>
                     </view>
                     <connections>
                         <outlet property="skView" destination="Hc1-Rm-pFZ" id="fiq-oJ-RLj"/>
+                        <outlet property="youWinView" destination="crL-kF-D8M" id="xq7-fB-esO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

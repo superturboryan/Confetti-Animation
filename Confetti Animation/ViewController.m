@@ -14,6 +14,8 @@
 
 @property (strong, nonatomic) IBOutlet SKView *skView;
 
+@property (strong, nonatomic) IBOutlet UIView *youWinView;
+
 @end
 
 @implementation ViewController
@@ -25,6 +27,35 @@
     self.skView.allowsTransparency = YES;
     
     [self playConfetti];
+    
+    [self hideYouWin];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self revealYouWin];
+}
+
+-(void)hideYouWin {
+    CGAffineTransform shrink = CGAffineTransformMakeScale(0, 0);
+    CGAffineTransform down = CGAffineTransformMakeTranslation(0, 1500);
+    CGAffineTransform downAndShrink = CGAffineTransformConcat(down, shrink);
+    self.youWinView.transform = down;
+}
+
+-(void)revealYouWin {
+    [UIView animateWithDuration:0.7
+                          delay:1
+         usingSpringWithDamping:0.8
+          initialSpringVelocity:0.3
+                        options:UIViewAnimationOptionCurveEaseInOut
+                     animations:^{
+        
+        self.youWinView.transform = CGAffineTransformIdentity;
+        
+    } completion:^(BOOL finished) {
+        return;
+    }];
 }
 
 -(void)playConfetti {
