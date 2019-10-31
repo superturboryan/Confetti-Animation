@@ -14,7 +14,7 @@
 
 @property (strong, nonatomic) IBOutlet SKView *skView;
 
-@property (strong, nonatomic) IBOutlet UIView *youWinView;
+@property (weak, nonatomic) IBOutlet UIImageView *gritCoinImageView;
 
 @end
 
@@ -26,34 +26,43 @@
     
     self.skView.allowsTransparency = YES;
     
-    self.youWinView.layer.cornerRadius = 15.0;
+    self.gritCoinImageView.layer.cornerRadius = 15.0;
     
     [self loadEmptyScene];
     
-    [self hideYouWin];
+    [self hideCoin];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    [self revealYouWin];
+    [self revealCoin];
 }
 
--(void)hideYouWin {
+-(void)hideCoin {
     CGAffineTransform shrink = CGAffineTransformMakeScale(0, 0);
     CGAffineTransform down = CGAffineTransformMakeTranslation(0, 1500);
     CGAffineTransform downAndShrink = CGAffineTransformConcat(down, shrink);
-    self.youWinView.transform = down;
+    self.gritCoinImageView.transform = down;
+    
+    self.gritCoinImageView.alpha = 0;
+    
+    self.gritCoinImageView.layer.masksToBounds = NO;
+    self.gritCoinImageView.layer.shadowColor = [UIColor blackColor].CGColor;
+    self.gritCoinImageView.layer.shadowOpacity = 0.2;
+    self.gritCoinImageView.layer.shadowOffset = CGSizeMake(0, 4.0);
+    self.gritCoinImageView.layer.shadowRadius = 2.0;
 }
 
--(void)revealYouWin {
-    [UIView animateWithDuration:0.7
+-(void)revealCoin {
+    [UIView animateWithDuration:1.2
                           delay:1
          usingSpringWithDamping:0.8
           initialSpringVelocity:0.3
                         options:UIViewAnimationOptionCurveEaseInOut
                      animations:^{
         
-        self.youWinView.transform = CGAffineTransformIdentity;
+        self.gritCoinImageView.alpha = 0.95;
+        self.gritCoinImageView.transform = CGAffineTransformIdentity;
         
     } completion:^(BOOL finished) {
         return;
@@ -70,9 +79,11 @@
     
     SKScene *confettiScene = [[ConfettiScene alloc] initWithSize:CGSizeMake(self.view.frame.size.width, self.view.frame.size.height)];
     
-//     confettiScene.scaleMode
+//     confettiScene.scaleMode =
 
-    [(ConfettiScene*)confettiScene setupConfetti];
+    CGPoint center = self.gritCoinImageView.center;
+    
+    [(ConfettiScene*)confettiScene setupConfettiWithPosition:center];
     
     [self.skView presentScene:confettiScene];
 }

@@ -22,21 +22,26 @@
     self.physicsBody = [SKPhysicsBody bodyWithEdgeLoopFromRect:self.frame];
     
     self.scene.backgroundColor = UIColor.clearColor;
-    
-    [self setupConfetti];
 }
 
--(void)setupConfetti
+-(void)setupConfettiWithPosition:(CGPoint)position
 {
-    SKEmitterNode *emitter = [NSKeyedUnarchiver unarchiveObjectWithFile: [[NSBundle mainBundle] pathForResource:@"Confetti" ofType:@"sks"]];
+    SKEmitterNode *emitter = [NSKeyedUnarchiver unarchiveObjectWithFile: [[NSBundle mainBundle] pathForResource:@"ConfettiExplosion" ofType:@"sks"]];
     
-    NSArray <SKColor *> *colorArray = @[ SKColor.whiteColor, SKColor.blueColor, SKColor.redColor, SKColor.yellowColor, SKColor.greenColor, SKColor.orangeColor];
+    NSArray *colorArray =
+    @[ [UIColor colorWithRed:204.0/255.0 green:23.0/255.0 blue:71.0/255.0 alpha:1] , // pinkRed
+       [UIColor colorWithRed:255.0/255.0 green:164.0/255.0 blue:2.0/255.0 alpha:1], // yellowDark
+       [UIColor colorWithRed:7.0/255.0 green:202.0/255.0 blue:196.0/255.0 alpha:1], // primary
+       [UIColor colorWithRed:222.0/255.0 green:93.0/255.0 blue:0.0/255.0 alpha:1], // yellowOrange
+       [UIColor colorWithRed:195.0/255.0 green:94.0/255.0 blue:232.0/255.0 alpha:1], // purple
+       UIColor.whiteColor
+    ];
     
-    emitter.position = CGPointMake(self.frame.size.width/2, self.frame.size.height);
+    emitter.position = position;
     
     emitter.particleColorSequence = nil;
 
-    emitter.particleColorBlendFactor = 100.0;
+    emitter.particleColorBlendFactor = 1.0;
     
     [self addChild:emitter];
     
@@ -44,7 +49,7 @@
         
         emitter.particleColor = [colorArray objectAtIndex: arc4random_uniform((uint32_t)colorArray.count)];
         
-        emitter.particleAlpha = 1.0 - ((double)arc4random_uniform(5)/10.0); // Random 0.5-1.0
+        emitter.particleAlpha = 1.0 - ((double)arc4random_uniform(2)/10.0); // Random 0.5-1.0
 
 //        NSLog(@"%lu",(unsigned long)random);
     }];
