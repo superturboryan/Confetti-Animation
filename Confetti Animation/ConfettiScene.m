@@ -24,9 +24,9 @@
     self.scene.backgroundColor = UIColor.clearColor;
 }
 
--(void)setupConfettiWithPosition:(CGPoint)position
+-(void)addEmitterWithPosition:(CGPoint)position andAngle:(CGFloat)angle
 {
-    SKEmitterNode *emitter = [NSKeyedUnarchiver unarchiveObjectWithFile: [[NSBundle mainBundle] pathForResource:@"ConfettiExplosion" ofType:@"sks"]];
+    SKEmitterNode *emitter = [NSKeyedUnarchiver unarchiveObjectWithFile: [[NSBundle mainBundle] pathForResource:@"ConfettiPop" ofType:@"sks"]];
     
     NSArray *colorArray =
     @[ [UIColor colorWithRed:204.0/255.0 green:23.0/255.0 blue:71.0/255.0 alpha:1] , // pinkRed
@@ -42,6 +42,8 @@
     emitter.particleColorSequence = nil;
 
     emitter.particleColorBlendFactor = 1.0;
+    
+    emitter.emissionAngle = angle * M_PI / 180;
     
     [self addChild:emitter];
     

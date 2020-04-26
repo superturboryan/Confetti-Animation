@@ -16,6 +16,7 @@
 		941136A523690C36003AE8E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 941136A323690C36003AE8E5 /* LaunchScreen.storyboard */; };
 		941136A823690C36003AE8E5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 941136A723690C36003AE8E5 /* main.m */; };
 		941136B023690D1C003AE8E5 /* Confetti.sks in Resources */ = {isa = PBXBuildFile; fileRef = 941136AF23690D1C003AE8E5 /* Confetti.sks */; };
+		9426AF4C24535D7E009BFD22 /* ConfettiPop.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9426AF4B24535D7D009BFD22 /* ConfettiPop.sks */; };
 		94CD7D672369127000A56BFB /* ConfettiScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 94CD7D662369127000A56BFB /* ConfettiScene.m */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +35,7 @@
 		941136A623690C36003AE8E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		941136A723690C36003AE8E5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		941136AF23690D1C003AE8E5 /* Confetti.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Confetti.sks; sourceTree = "<group>"; };
+		9426AF4B24535D7D009BFD22 /* ConfettiPop.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ConfettiPop.sks; sourceTree = "<group>"; };
 		94CD7D652369127000A56BFB /* ConfettiScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConfettiScene.h; sourceTree = "<group>"; };
 		94CD7D662369127000A56BFB /* ConfettiScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ConfettiScene.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -68,6 +70,7 @@
 		9411369423690C34003AE8E5 /* Confetti Animation */ = {
 			isa = PBXGroup;
 			children = (
+				9426AF4A24535D2A009BFD22 /* Particles */,
 				94CD7D6923691AD700A56BFB /* AppDelegate */,
 				94CD7D6823691ACA00A56BFB /* SceneDelegate */,
 				9411369E23690C34003AE8E5 /* Main.storyboard */,
@@ -75,14 +78,22 @@
 				9411369C23690C34003AE8E5 /* ViewController.m */,
 				94CD7D652369127000A56BFB /* ConfettiScene.h */,
 				94CD7D662369127000A56BFB /* ConfettiScene.m */,
-				941136AF23690D1C003AE8E5 /* Confetti.sks */,
-				6AB080B9236B2D21003CEAF7 /* ConfettiExplosion.sks */,
 				941136A623690C36003AE8E5 /* Info.plist */,
 				941136A723690C36003AE8E5 /* main.m */,
 				941136A123690C36003AE8E5 /* Assets.xcassets */,
 				941136A323690C36003AE8E5 /* LaunchScreen.storyboard */,
 			);
 			path = "Confetti Animation";
+			sourceTree = "<group>";
+		};
+		9426AF4A24535D2A009BFD22 /* Particles */ = {
+			isa = PBXGroup;
+			children = (
+				941136AF23690D1C003AE8E5 /* Confetti.sks */,
+				6AB080B9236B2D21003CEAF7 /* ConfettiExplosion.sks */,
+				9426AF4B24535D7D009BFD22 /* ConfettiPop.sks */,
+			);
+			path = Particles;
 			sourceTree = "<group>";
 		};
 		94CD7D6823691ACA00A56BFB /* SceneDelegate */ = {
@@ -162,6 +173,7 @@
 			files = (
 				941136A523690C36003AE8E5 /* LaunchScreen.storyboard in Resources */,
 				941136A223690C36003AE8E5 /* Assets.xcassets in Resources */,
+				9426AF4C24535D7E009BFD22 /* ConfettiPop.sks in Resources */,
 				941136A023690C34003AE8E5 /* Main.storyboard in Resources */,
 				941136B023690D1C003AE8E5 /* Confetti.sks in Resources */,
 				6AB080BA236B2D21003CEAF7 /* ConfettiExplosion.sks in Resources */,

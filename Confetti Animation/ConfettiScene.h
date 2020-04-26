@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ConfettiScene : SKScene
 
--(void)setupConfettiWithPosition:(CGPoint)position;
+-(void)addEmitterWithPosition:(CGPoint)position andAngle:(CGFloat)angle;
 
 @end
 

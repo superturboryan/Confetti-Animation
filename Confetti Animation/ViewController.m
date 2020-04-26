@@ -81,9 +81,10 @@
     
 //     confettiScene.scaleMode =
 
-    CGPoint center = self.gritCoinImageView.center;
+//    CGPoint center = self.gritCoinImageView.center;
     
-    [(ConfettiScene*)confettiScene setupConfettiWithPosition:center];
+    [(ConfettiScene*)confettiScene addEmitterWithPosition: CGPointMake(self.view.frame.origin.x , 0) andAngle:80];
+    [(ConfettiScene*)confettiScene addEmitterWithPosition: CGPointMake(self.view.frame.size.width , 0) andAngle:100];
     
     [self.skView presentScene:confettiScene];
 }
